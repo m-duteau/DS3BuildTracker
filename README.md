@@ -28,3 +28,5 @@ Implement rings
 Implement shields
 
 Implement build saving
+
+Implement proper input error handling
