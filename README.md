@@ -11,13 +11,20 @@ Before anything else, this is mainly a personal project to gain and show experie
 
 # Current State
 Intake data for weapons, armor, and sorceries
+
 Access different menus to view weapons, armor, and sorceries
+
 Each menu has the option to list all names of elements (weapons, armor, sorceries), all names and attributes of elements, or find a specific element within the current element type
+
 Weapon and Armor menus also provide an option for viewing elements by weapon type or armor set
 
 # Roadmap/To-Do
 Implement miracles
+
 Implement pyromancies
+
 Implement rings
+
 Implement shields
+
 Implement build saving
