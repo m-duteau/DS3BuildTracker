@@ -71,11 +71,37 @@ struct Sorcery {
     std::string notes = "";
 };
 
-// shields,rings,miracles,pyromancies
+struct Miracle {
+    int miracleID = -1;
+    std::string miracleName = "";
+    std::string fpCost = "";
+    std::string slotsReq = "";
+    std::string faithReq = "";
+    std::string miracleDesc = "";
+    std::string acquisition = "";
+    std::string notes = "";
+};
+
+struct Pyromancy {
+    int pyromancyID = -1;
+    std::string pyromancyName = "";
+    std::string fpCost = "";
+    std::string slotsReq = "";
+    std::string intReq = "";
+    std::string faithReq = "";
+    std::string pyromancyDesc = "";
+    std::string acquisition = "";
+    std::string notes = "";
+};
+
+// shields,rings
 
 std::vector<std::string> splitString(std::string str, char delimiter);
+std::vector<std::string> retrieveFileContents(std::string csvPath);
 std::vector<Weapon> loadWeapons(std::string csvPath);
 std::vector<Armor> loadArmor(std::string csvPath);
 std::vector<Sorcery> loadSorceries(std::string csvPath);
+std::vector<Miracle> loadMiracles(std::string csvPath);
+std::vector<Pyromancy> loadPyromancies(std::string csvPath);
 
 #endif

@@ -1,7 +1,7 @@
 #include "CSVParser.h"
 
 /*
- * method for string splitting in loadWeapons() method
+ * method for string splitting in loading methods
  * reference: https://stackoverflow.com/a/46931770/19361783
  *
  * @param str String to be split
@@ -20,28 +20,27 @@ std::vector<std::string> splitString(std::string str, char delimiter) {
 }
 
 /*
- * Load a .csv file containing weapon information into a container
+ * method for reading the contents of a .csv file
  *
- * @param csvPath the path to the .csv file to load
- * @return a container holding all the weapons read
+ * @param csvPath .csv file to be read
+ * @return a container of lines from the file
  */
-std::vector<Weapon> loadWeapons(std::string csvPath) {
+std::vector<std::string> retrieveFileContents(std::string csvPath) {
     std::cout << "--- Loading file " << csvPath << " ---\n" << std::endl;
 
-    std::vector<Weapon> weaponList;
     std::vector<std::string> fileLines; // holds individual lines of the .csv being read
-    std::ifstream weaponsFile; // instance to load the .csv
-    weaponsFile.open(csvPath);
+    std::ifstream csvFile; // instance to load the .csv
+    csvFile.open(csvPath);
 
-    if (weaponsFile.is_open()) {
-        while (weaponsFile.good()) {
+    if (csvFile.is_open()) {
+        while (csvFile.good()) {
             std::string line; // holds the current line being read
-            std::getline(weaponsFile, line);
+            std::getline(csvFile, line);
             // add the line to fileLines if the line is not empty/blank
             if (line != "")
                 fileLines.push_back(line);
         }
-        weaponsFile.close();
+        csvFile.close();
 
         // checks that data was actually read from the file
         // i.e. if fileLines is empty, then nothing was read from the file
@@ -49,6 +48,19 @@ std::vector<Weapon> loadWeapons(std::string csvPath) {
             std::cout << "No data was found in " << csvPath << "." << std::endl;
         }
     }
+
+    return fileLines;
+}
+
+/*
+ * Load a .csv file containing weapon information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the weapons read
+ */
+std::vector<Weapon> loadWeapons(std::string csvPath) {
+    std::vector<Weapon> weaponList;
+    std::vector<std::string> fileLines = retrieveFileContents(csvPath); // holds individual lines of the .csv being read
 
     // if fileLines isn't empty, data will be allocated to weapon objects
     if (fileLines.size() != 0) {
@@ -148,7 +160,7 @@ std::vector<Weapon> loadWeapons(std::string csvPath) {
             }
             // empty the brokenStrings vector
             brokenStrings.clear();
-            // weapon is then added to the tree using Insert() method
+            // weapon is then added to the container
             weaponList.push_back(weapon);
         }
         std::cout << "Weapon data has been stored successfully.\n\n" << std::endl;
@@ -164,26 +176,8 @@ std::vector<Weapon> loadWeapons(std::string csvPath) {
 
 //same as above but for armor
 std::vector<Armor> loadArmor(std::string csvPath) {
-    std::cout << "--- Loading file " << csvPath << " ---\n" << std::endl;
-
     std::vector<Armor> armorList;
-    std::vector<std::string> fileLines;
-    std::ifstream armorFile;
-    armorFile.open(csvPath);
-
-    if (armorFile.is_open()) {
-        while (armorFile.good()) {
-            std::string line;
-            std::getline(armorFile, line);
-            if (line != "")
-                fileLines.push_back(line);
-        }
-        armorFile.close();
-
-        if (fileLines.size() == 0) {
-            std::cout << "No data was found in " << csvPath << "." << std::endl;
-        }
-    }
+    std::vector<std::string> fileLines = retrieveFileContents(csvPath);
 
     if (fileLines.size() != 0) {
         for (int i = 4; i < fileLines.size(); ++i) {
@@ -229,26 +223,8 @@ std::vector<Armor> loadArmor(std::string csvPath) {
 
 //same as above but for sorceries
 std::vector<Sorcery> loadSorceries(std::string csvPath) {
-    std::cout << "--- Loading file " << csvPath << " ---\n" << std::endl;
-
     std::vector<Sorcery> sorceryList;
-    std::vector<std::string> fileLines;
-    std::ifstream sorceryFile;
-    sorceryFile.open(csvPath);
-
-    if (sorceryFile.is_open()) {
-        while (sorceryFile.good()) {
-            std::string line;
-            std::getline(sorceryFile, line);
-            if (line != "")
-                fileLines.push_back(line);
-        }
-        sorceryFile.close();
-
-        if (fileLines.size() == 0) {
-            std::cout << "No data was found in " << csvPath << "." << std::endl;
-        }
-    }
+    std::vector<std::string> fileLines = retrieveFileContents(csvPath);
 
     if (fileLines.size() != 0) {
         for (int i = 1; i < fileLines.size(); ++i) {
@@ -260,7 +236,6 @@ std::vector<Sorcery> loadSorceries(std::string csvPath) {
                 return sorceryList;
             }
 
-            // allocate brokenStrings data to weapon data
             sorcery.sorceryID = i;
             sorcery.sorceryName = brokenStrings.at(0);
             sorcery.fpCost = brokenStrings.at(1);
@@ -283,4 +258,83 @@ std::vector<Sorcery> loadSorceries(std::string csvPath) {
     fileLines.clear();
 
     return sorceryList;
+}
+
+// same as above but for miracles
+std::vector<Miracle> loadMiracles(std::string csvPath) {
+    std::vector<Miracle> miracleList;
+    std::vector<std::string> fileLines = retrieveFileContents(csvPath);
+
+    if (fileLines.size() != 0) {
+        for (int i = 1; i < fileLines.size(); ++i) {
+            Miracle miracle;
+            std::string currLine = fileLines.at(i);
+            std::vector<std::string> brokenStrings = splitString(currLine, ',');
+            if (brokenStrings.size() == 0) {
+                std::cout << "Incorrect file format." << std::endl;
+                return miracleList;
+            }
+
+            miracle.miracleID = i;
+            miracle.miracleName = brokenStrings.at(0);
+            miracle.fpCost = brokenStrings.at(1);
+            miracle.slotsReq = brokenStrings.at(2);
+            miracle.faithReq = brokenStrings.at(3);
+            miracle.miracleDesc = brokenStrings.at(4);
+            miracle.acquisition = brokenStrings.at(5);
+            if (brokenStrings.size() == 7) {
+                miracle.notes = brokenStrings.at(6);
+            }
+
+            brokenStrings.clear();
+            miracleList.push_back(miracle);
+        }
+        std::cout << "Miracle data has been stored successfully.\n\n" << std::endl;
+    }
+    else {
+        std::cout << "Unable to open " << csvPath << ".\n" << std::endl;
+    }
+    fileLines.clear();
+
+    return miracleList;
+}
+
+// same as above but for pyromancies
+std::vector<Pyromancy> loadPyromancies(std::string csvPath) {
+    std::vector<Pyromancy> pyromancyList;
+    std::vector<std::string> fileLines = retrieveFileContents(csvPath);
+
+    if (fileLines.size() != 0) {
+        for (int i = 1; i < fileLines.size(); ++i) {
+            Pyromancy pyromancy;
+            std::string currLine = fileLines.at(i);
+            std::vector<std::string> brokenStrings = splitString(currLine, ',');
+            if (brokenStrings.size() == 0) {
+                std::cout << "Incorrect file format." << std::endl;
+                return pyromancyList;
+            }
+
+            pyromancy.pyromancyID = i;
+            pyromancy.pyromancyName = brokenStrings.at(0);
+            pyromancy.fpCost = brokenStrings.at(1);
+            pyromancy.slotsReq = brokenStrings.at(2);
+            pyromancy.intReq = brokenStrings.at(3);
+            pyromancy.faithReq = brokenStrings.at(4);
+            pyromancy.pyromancyDesc = brokenStrings.at(5);
+            pyromancy.acquisition = brokenStrings.at(6);
+            if (brokenStrings.size() == 8) {
+                pyromancy.notes = brokenStrings.at(7);
+            }
+
+            brokenStrings.clear();
+            pyromancyList.push_back(pyromancy);
+        }
+        std::cout << "Pyromancy data has been stored successfully.\n\n" << std::endl;
+    }
+    else {
+        std::cout << "Unable to open " << csvPath << ".\n" << std::endl;
+    }
+    fileLines.clear();
+
+    return pyromancyList;
 }

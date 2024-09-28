@@ -22,7 +22,7 @@ void displayWeapon(Weapon weapon) {
     }
     std::cout << "Upgrade material: " << weapon.upgradeMat << std::endl;
 
-    //if weapon.[thing] != "" then [thing] gets printed
+    //if weapon.[thing] is not empty then [thing] gets printed
     if (weapon.reqStr != "") {
         std::cout << "Required strength: " << weapon.reqStr << std::endl;
     }
@@ -109,7 +109,7 @@ void displayArmor(Armor armor) {
     std::cout << "Poison protection: " << armor.defPoison << std::endl;
     std::cout << "Frost protection: " << armor.defFrost << std::endl;
     std::cout << "Curse protection: " << armor.defCurse << std::endl;
-    std::cout << "-------------------\n" << std::endl;
+    std::cout << "--------------------\n" << std::endl;
 
     return;
 }
@@ -132,16 +132,20 @@ void displaySorcery(Sorcery sorcery) {
     }
     else {
         for (int i = 0; i < acquisitionStrings.size(); ++i) {
+            std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
             if (acquisitionStrings.at(i).find("^") != std::string::npos) {
-                std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
                 std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
+                acquisitionSubstr.clear();
             }
             else {
                 std::cout << acquisitionStrings.at(i) << " ";
             }
+            acquisitionSubstr.clear();
         }
         std::cout << "\n";
     }
+
+    acquisitionStrings.clear();
 
     if (sorcery.notes != "") {
         std::cout << "\nNotes: " << sorcery.notes << std::endl;
@@ -150,8 +154,100 @@ void displaySorcery(Sorcery sorcery) {
     if (sorcery.sorceryID != 38) {
         std::cout << "\n-------------------\n" << std::endl;
     }
-    
+
+    return;
+}
+
+/*
+ * Display the miracle information to the console (std::out)
+ */
+void displayMiracle(Miracle miracle) {
+    std::cout << miracle.miracleID << ": " << miracle.miracleName << std::endl;
+    std::cout << "FP cost: " << miracle.fpCost << std::endl;
+    std::cout << "Slots required: " << miracle.slotsReq << std::endl;
+    std::cout << "Faith required: " << miracle.faithReq << std::endl;
+    std::cout << "\nDescription:\n" << miracle.miracleDesc << std::endl;
+    std::cout << "\nAcquisition:" << std::endl;
+
+    std::vector<std::string> acquisitionStrings = splitString(miracle.acquisition, ' ');
+
+    if (acquisitionStrings.size() == 0) {
+        std::cout << "Something bad happened." << std::endl;
+    }
+    else {
+        for (int i = 0; i < acquisitionStrings.size(); ++i) {
+            std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
+            if (acquisitionStrings.at(i).find("^") != std::string::npos) {
+                std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
+                acquisitionSubstr.clear();
+            }
+            else {
+                std::cout << acquisitionStrings.at(i) << " ";
+            }
+            acquisitionSubstr.clear();
+        }
+        std::cout << "\n";
+    }
+
     acquisitionStrings.clear();
+
+    if (miracle.notes != "") {
+        if (miracle.notes.find("^") != std::string::npos) {
+            std::vector<std::string> notesStrings = splitString(miracle.notes, ' ');
+
+            if (notesStrings.size() == 0) {
+                std::cout << "Something bad happened." << std::endl;
+            }
+            else {
+                std::cout << "\nNotes:" << std::endl;
+                for (int i = 0; i < notesStrings.size(); ++i) {
+                    std::vector<std::string> notesSubstr = splitString(notesStrings.at(i), '^');
+                    if (notesStrings.at(i).find("^") != std::string::npos) {
+                        std::cout << notesSubstr.at(0) << "\n" << notesSubstr.at(1) << " ";
+                        notesSubstr.clear();
+                    }
+                    else {
+                        std::cout << notesStrings.at(i) << " ";
+                    }
+                    notesSubstr.clear();
+                }
+                std::cout << "\n";
+            }
+
+            notesStrings.clear();
+        }
+
+        else {
+            std::cout << "\nNotes: " << miracle.notes << std::endl;
+        }
+    }
+
+    if (miracle.miracleID != 38) {
+        std::cout << "\n-------------------\n" << std::endl;
+    }
+
+    return;
+}
+
+/*
+ * Display the pyromancy information to the console (std::out)
+ */
+void displayPyromancy(Pyromancy pyromancy) {
+    std::cout << pyromancy.pyromancyID << ": " << pyromancy.pyromancyName << std::endl;
+    std::cout << "FP cost: " << pyromancy.fpCost << std::endl;
+    std::cout << "Slots required: " << pyromancy.slotsReq << std::endl;
+    std::cout << "Intelligence required: " << pyromancy.intReq << std::endl;
+    std::cout << "Faith required: " << pyromancy.faithReq << std::endl;
+    std::cout << "\nDescription:\n" << pyromancy.pyromancyDesc << std::endl;
+    std::cout << "\nAcquisition:\n" << pyromancy.acquisition << std::endl;
+
+    if (pyromancy.notes != "") {
+        std::cout << "\nNotes: " << pyromancy.notes << std::endl;
+    }
+
+    if (pyromancy.pyromancyID != 30) {
+        std::cout << "\n-------------------\n" << std::endl;
+    }
 
     return;
 }

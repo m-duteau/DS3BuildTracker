@@ -1,12 +1,14 @@
 //============================================================================
 // Name        : DS3BuildTracker
 // Author      : Syd Nivraam
-// Version     : 0.1
+// Version     : 0.2
 // Description : Hello World in C++, Ansi-style; reads data from .csv
 //               files in order for user to create and save DS3 builds.
 // Credits     : Weapons spreadsheet by u/D_VoN on reddit https://www.reddit.com/r/darksouls3/comments/4fo66t/dark_souls_iii_weapons_spreadsheet/
 //             : Armor spreadsheet by naiyt on GoogleDocs https://docs.google.com/spreadsheets/d/1OVGVtjCgkoFPEvtCKHx7dh9tXVplMbft4iUSY_Inm_I/edit#gid=0
 //             : Sorceries spreadsheet self made using data from https://darksouls3.wiki.fextralife.com/Sorceries
+//             : Miracles spreadsheet self made using data from https://darksouls3.wiki.fextralife.com/Miracles
+//             : Pyromancies spreadsheet self made using data from https://darksouls3.wiki.fextralife.com/Pyromancies
 //============================================================================
 
 #include "CSVParser.h"
@@ -37,9 +39,13 @@ int main() {
     string csvPathWeapon = "Dark_Souls_3_Weapons_Normal.csv";
     string csvPathArmor = "Dark_Souls_3_Armor_Data.csv";
     string csvPathSorceries = "Dark_Souls_3_Sorceries.csv";
+    string csvPathMiracles = "Dark_Souls_3_Miracles.csv";
+    string csvPathPyromancies = "Dark_Souls_3_Pyromancies.csv";
     vector<Weapon> weaponList = loadWeapons(csvPathWeapon);
     vector<Armor> armorList = loadArmor(csvPathArmor);
     vector<Sorcery> sorceryList = loadSorceries(csvPathSorceries);
+    vector<Miracle> miracleList = loadMiracles(csvPathMiracles);
+    vector<Pyromancy> pyromancyList = loadPyromancies(csvPathPyromancies);
 
     int choice = 0;
 
@@ -52,7 +58,7 @@ int main() {
         cout << "*                                          *" << endl;
         cout << "*  1. Weapons                              *" << endl;
         cout << "*  2. Armor                                *" << endl;
-        cout << "*  3. Sorceries                            *" << endl;
+        cout << "*  3. Magic                                *" << endl;
         cout << "*  9. New Build                            *" << endl;
         cout << "*  10. Load Build                          *" << endl;
         cout << "*  99. Exit                                *" << endl;
@@ -72,7 +78,7 @@ int main() {
 
         
         if (choice == 3) {
-            sorceryMenu(sorceryList);
+            magicMenu(sorceryList, miracleList, pyromancyList);
         }
 
         /*fix me

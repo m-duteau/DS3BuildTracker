@@ -6,5 +6,7 @@
 void displayWeapon(Weapon weapon);
 void displayArmor(Armor armor);
 void displaySorcery(Sorcery sorcery);
+void displayMiracle(Miracle miracle);
+void displayPyromancy(Pyromancy pyromancy);
 
 #endif
