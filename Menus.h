@@ -6,6 +6,6 @@
 
 void weaponMenu(std::vector<Weapon> weaponList);
 void armorMenu(std::vector<Armor> armorList);
-void sorceryMenu(std::vector<Sorcery> sorceryList);
+void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleList, std::vector<Pyromancy> pyromancyList);
 
 #endif
