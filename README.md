@@ -19,9 +19,6 @@ Each menu has the option to list all names of elements (weapons, armor, sorcerie
 Weapon and Armor menus also provide an option for viewing elements by weapon type or armor set
 
 # Roadmap/To-Do
-Implement miracles
-
-Implement pyromancies
 
 Implement rings
 
