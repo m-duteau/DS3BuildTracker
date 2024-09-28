@@ -7,14 +7,18 @@ DS3 Build Tracker reads .csv files in order to save data for weapons, armor, sor
 Certain .csv files were created by other users; they are credited within the heading of the Source.cpp, and any .csv files made by me use data gathered from https://darksouls3.wiki.fextralife.com/Dark+Souls+3+Wiki . Editing of .csv files is not recommended as it can cause unintended behavior by the program.
 
 # Motivation
-Before anything else, this is mainly a personal project to gain and show experience with the C++ programming language. However, I've also found it difficult to impossible to find an already established Dark Souls 3 reference application or software that includes an option to save builds; either this feature is non-existent or locked behind a paywall. I intend for this to be a free to use, open source option for those wishing to save their builds.
+Before anything else, this is mainly a personal project to gain and show experience with the C++ programming language. However, I've also found it difficult to impossible to find an already established Dark Souls 3 reference application or software that includes an option to save builds; either this feature is non-existent or locked behind a paywall.
+
+If you're like me, you've probably put hundreds of hours into Dark Souls 3 and opt for new ways to play the game. Imagine: you have an already established character with a build you've admired for some time, but you want to branch out and try something new. You head to Rosaria, respec, and equip an entirely different set of gear. Time passes, and you miss that old build. You go back to Rosaria to respec and realize... I don't remember the equipment my old build was using! As such, I intend for this to be a free to use, open source option for those wishing to save their builds (once it is complete).
+
+Aside from build saving, the datasheets include extensive information about individual weapons, armors, spells, etc. As such, I imagine this can serve as a miniature companion app for the game that can help you to keep track of armament specifications and acquisition methods of various spells and rings.
 
 # Current State
-Intake data for weapons, armor, and sorceries
+Intake data for weapons, armor, and magic
 
-Access different menus to view weapons, armor, and sorceries
+Access different menus to view weapons, armor, and magic
 
-Each menu has the option to list all names of elements (weapons, armor, sorceries), all names and attributes of elements, or find a specific element within the current element type
+Each menu has the option to list all names of elements (weapons, armor, magic), all names and attributes of elements, or find a specific element within the current element type
 
 Weapon and Armor menus also provide an option for viewing elements by weapon type or armor set
 
@@ -27,3 +31,5 @@ Implement shields
 Implement build saving
 
 Implement proper input error handling
+
+Some DLC content (among other things like the pyromancy flame) may be amiss from the datasheets I did not curate myself, so I will likely need to analyze and edit them at some point
