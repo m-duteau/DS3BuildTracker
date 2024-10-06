@@ -8,7 +8,8 @@
 #include <fstream>
 
 // structure to hold weapon information
-struct Weapon {
+struct Weapon
+{
     int weaponID = -1; // unique identifier
     std::string weaponName = "";
     std::string reqStr = "";
@@ -39,7 +40,36 @@ struct Weapon {
     std::string notes = "";
 };
 
-struct Armor {
+struct Shield
+{
+    int shieldID = -1;
+    std::string shieldName = "";
+    std::string reqStr = "";
+    std::string reqDex = "";
+    std::string reqInt = "";
+    std::string reqFth = "";
+    std::string weight = "";
+    std::string crit = "";
+    std::string dmgPhys = "";
+    std::string dmgFire = "";
+    std::string defPhys = "";
+    std::string defMag = "";
+    std::string defFire = "";
+    std::string defLight = "";
+    std::string defDark = "";
+    std::string stability = "";
+    std::string scaleStr = "";
+    std::string scaleInt = "";
+    std::string scaleFth = "";
+    std::string shieldType = "";
+    std::string damageType = "";
+    std::string shieldSkill = "";
+    std::string upgradeMat = "";
+    std::string notes = "";
+};
+
+struct Armor
+{
     int armorID = -1;
     std::string armorName = "";
     std::string weight = "";
@@ -60,7 +90,8 @@ struct Armor {
     std::string armorSet = "";
 };
 
-struct Sorcery {
+struct Sorcery
+{
     int sorceryID = -1;
     std::string sorceryName = "";
     std::string fpCost = "";
@@ -71,7 +102,8 @@ struct Sorcery {
     std::string notes = "";
 };
 
-struct Miracle {
+struct Miracle
+{
     int miracleID = -1;
     std::string miracleName = "";
     std::string fpCost = "";
@@ -82,7 +114,8 @@ struct Miracle {
     std::string notes = "";
 };
 
-struct Pyromancy {
+struct Pyromancy
+{
     int pyromancyID = -1;
     std::string pyromancyName = "";
     std::string fpCost = "";
@@ -99,6 +132,7 @@ struct Pyromancy {
 std::vector<std::string> splitString(std::string str, char delimiter);
 std::vector<std::string> retrieveFileContents(std::string csvPath);
 std::vector<Weapon> loadWeapons(std::string csvPath);
+std::vector<Shield> loadShields(std::string csvPath);
 std::vector<Armor> loadArmor(std::string csvPath);
 std::vector<Sorcery> loadSorceries(std::string csvPath);
 std::vector<Miracle> loadMiracles(std::string csvPath);
