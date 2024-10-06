@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSVParser.cpp">
@@ -42,6 +42,9 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="Dark_Souls_3_Miracles.csv">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Dark_Souls_3_Shields.csv">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

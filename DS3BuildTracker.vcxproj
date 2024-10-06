@@ -135,12 +135,13 @@
     <ClCompile Include="CSVParser.cpp" />
     <ClCompile Include="Displays.cpp" />
     <ClCompile Include="Menus.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dark_Souls_3_Armor_Data.csv" />
     <None Include="Dark_Souls_3_Miracles.csv" />
     <None Include="Dark_Souls_3_Pyromancies.csv" />
+    <None Include="Dark_Souls_3_Shields.csv" />
     <None Include="Dark_Souls_3_Sorceries.csv" />
     <None Include="Dark_Souls_3_Weapons_Normal.csv" />
   </ItemGroup>

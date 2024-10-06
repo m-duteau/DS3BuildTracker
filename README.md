@@ -14,19 +14,17 @@ If you're like me, you've probably put hundreds of hours into Dark Souls 3 and o
 Aside from build saving, the datasheets include extensive information about individual weapons, armors, spells, etc. As such, I imagine this can serve as a miniature companion app for the game that can help you to keep track of armament specifications and acquisition methods of various spells and rings.
 
 # Current State
-Intake data for weapons, armor, and magic
+Intake data for weapons, shields, armor, and magic
 
-Access different menus to view weapons, armor, and magic
+Access different menus to view weapons, shields, armor, and magic
 
-Each menu has the option to list all names of elements (weapons, armor, magic), all names and attributes of elements, or find a specific element within the current element type
+Each menu has the option to list all names of elements (weapons, shields, armor, magic), all names and attributes of elements, or find a specific element within the current element type
 
-Weapon and Armor menus also provide an option for viewing elements by weapon type or armor set
+Weapon/Shield and Armor menus also provide an option for viewing elements by weapon/shield type or armor set
 
 # Roadmap/To-Do
 
 Implement rings
-
-Implement shields
 
 Implement build saving
 
