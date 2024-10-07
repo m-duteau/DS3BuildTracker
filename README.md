@@ -4,7 +4,7 @@ DS3 Build Tracker is a C++ program that aims to create a space for users to save
 
 DS3 Build Tracker reads .csv files in order to save data for weapons, armor, sorceries, miracles, pyromancies, and rings. Through various menus, the user has the ability to read the names and attributes of any of these aforementioned build elements. The user can then save these elements to a new Build object using unique ID's corresponding to the different options available for each element.
 
-Certain .csv files were created by other users; they are credited within the heading of the main.cpp, and any .csv files made by me use data gathered from https://darksouls3.wiki.fextralife.com/Dark+Souls+3+Wiki . Editing of .csv files is not recommended as it can cause unintended behavior by the program.
+Certain .csv files were created by other users; they are credited within the heading of the main.cpp, and any .csv files made by me use data gathered from https://darksouls3.wiki.fextralife.com/Dark+Souls+3+Wiki , https://darksouls.fandom.com/wiki/Category:Dark_Souls_III , and the game itself. Editing of .csv files is NOT recommended as it can cause unintended behavior by the program.
 
 # Motivation
 Before anything else, this is mainly a personal project to gain and show experience with the C++ programming language. However, I've also found it difficult to impossible to find an already established Dark Souls 3 reference application or software that includes an option to save builds; either this feature is non-existent or locked behind a paywall.
