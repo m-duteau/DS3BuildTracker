@@ -189,9 +189,104 @@ void displayArmor(Armor armor)
     std::cout << "Poison protection: " << armor.defPoison << std::endl;
     std::cout << "Frost protection: " << armor.defFrost << std::endl;
     std::cout << "Curse protection: " << armor.defCurse << std::endl;
-    std::cout << "\n-------------------\n" << std::endl;
 
     return;
+}
+
+/*
+ * Display the ring information to the console (std::out)
+ */
+void displayRing(Ring ring)
+{
+    std::cout << ring.ringID << ": " << ring.ringName << std::endl;
+    std::cout << "Weight: " << ring.weight << std::endl;
+    std::cout << "\nDescription:" << std::endl;
+    // Some ring descriptions require newlines so I'm taking these descriptions and
+    // storing them in a vector in order to search for a delimiter to place newlines
+    // so that they'll show up in the console with better readability
+    if (ring.ringDesc.find("^") != std::string::npos)
+    {
+        std::vector<std::string> descriptionStrings = splitString(ring.ringDesc, ' ');
+
+        // All rings have a description so the size of the descriptionStrings vector should not be empty
+        if (descriptionStrings.size() == 0)
+        {
+            std::cout << "Something bad happened." << std::endl;
+        }
+        else
+        {
+            for (int i = 0; i < descriptionStrings.size(); ++i)
+            {
+                // check if the string contains the delimiter for adding newline
+                if (descriptionStrings.at(i).find("^") != std::string::npos)
+                {
+                    // split the string using the delimiter
+                    std::vector<std::string> descriptionSubstr = splitString(descriptionStrings.at(i), '^');
+                    // cout subtring, add newline, cout next subtring
+                    std::cout << descriptionSubstr.at(0) << "\n" << descriptionSubstr.at(1) << " ";
+                    // empty the subtring vector
+                    descriptionSubstr.clear();
+                }
+                else
+                {
+                    // cout the current string and a space when it does not contain the delimiter
+                    std::cout << descriptionStrings.at(i) << " ";
+                }
+            }
+            std::cout << "\n";
+        }
+        // clear the descriptionStrings vector
+        descriptionStrings.clear();
+    }
+    // cout the description as normal if it does not contain any delimiters
+    else
+    {
+        std::cout << ring.ringDesc << std::endl;
+    }
+
+    return;
+}
+
+/*
+ * Display the ring information with acquisition descriptions to the console (std::out)
+ * Ring acquisition methods are very lengthy and detailed, so this extra method felt necessary to include
+ * so that the user may choose whether or not to view acquisition information
+ */
+void displayRingWithAcq(Ring ring)
+{
+    displayRing(ring);
+    std::cout << "\nAcquisition:" << std::endl;
+    std::vector<std::string> acquisitionStrings = splitString(ring.acquisition, ' ');
+
+    if (acquisitionStrings.size() == 0)
+    {
+        std::cout << "Something bad happened." << std::endl;
+    }
+    else
+    {
+        for (int i = 0; i < acquisitionStrings.size(); ++i)
+        {
+            if (acquisitionStrings.at(i).find('@') != std::string::npos)
+            {
+                std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '@');
+                std::cout << acquisitionSubstr.at(0) << "\n\n" << acquisitionSubstr.at(1) << " ";
+                acquisitionSubstr.clear();
+            }
+            else if (acquisitionStrings.at(i).find('^') != std::string::npos)
+            {
+                std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
+                std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
+                acquisitionSubstr.clear();
+            }
+            else
+            {
+                std::cout << acquisitionStrings.at(i) << " ";
+            }
+        }
+        std::cout << "\n";
+    }
+
+    acquisitionStrings.clear();
 }
 
 /*
@@ -206,12 +301,9 @@ void displaySorcery(Sorcery sorcery)
     std::cout << "\nDescription:\n" << sorcery.sorceryDesc << std::endl;
     std::cout << "\nAcquisition:" << std::endl;
 
-    // Some acquisition descriptions are lengthy so I'm taking these descriptions and
-    // storing them in a vector in order to search for a delimiter to place newlines
-    // so that they'll show up in the console more nicely/readable
+    // Similar newline placement finding as in the displayRing() method
     std::vector<std::string> acquisitionStrings = splitString(sorcery.acquisition, ' ');
 
-    // All spells have an acquisition description so the size of the acquisitionStrings vector should not be empty
     if (acquisitionStrings.size() == 0)
     {
         std::cout << "Something bad happened." << std::endl;
@@ -220,9 +312,9 @@ void displaySorcery(Sorcery sorcery)
     {
         for (int i = 0; i < acquisitionStrings.size(); ++i)
         {
-            std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
             if (acquisitionStrings.at(i).find("^") != std::string::npos)
             {
+                std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
                 std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
                 acquisitionSubstr.clear();
             }
@@ -230,7 +322,6 @@ void displaySorcery(Sorcery sorcery)
             {
                 std::cout << acquisitionStrings.at(i) << " ";
             }
-            acquisitionSubstr.clear();
         }
         std::cout << "\n";
     }
@@ -240,11 +331,6 @@ void displaySorcery(Sorcery sorcery)
     if (sorcery.notes != "")
     {
         std::cout << "\nNotes: " << sorcery.notes << std::endl;
-    }
-    
-    if (sorcery.sorceryID != 38)
-    {
-        std::cout << "\n-------------------\n" << std::endl;
     }
 
     return;
@@ -271,9 +357,9 @@ void displayMiracle(Miracle miracle)
     else {
         for (int i = 0; i < acquisitionStrings.size(); ++i)
         {
-            std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
             if (acquisitionStrings.at(i).find("^") != std::string::npos)
             {
+                std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
                 std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
                 acquisitionSubstr.clear();
             }
@@ -281,7 +367,6 @@ void displayMiracle(Miracle miracle)
             {
                 std::cout << acquisitionStrings.at(i) << " ";
             }
-            acquisitionSubstr.clear();
         }
         std::cout << "\n";
     }
@@ -327,11 +412,6 @@ void displayMiracle(Miracle miracle)
         }
     }
 
-    if (miracle.miracleID != 38)
-    {
-        std::cout << "\n-------------------\n" << std::endl;
-    }
-
     return;
 }
 
@@ -351,11 +431,6 @@ void displayPyromancy(Pyromancy pyromancy)
     if (pyromancy.notes != "")
     {
         std::cout << "\nNotes: " << pyromancy.notes << std::endl;
-    }
-
-    if (pyromancy.pyromancyID != 30)
-    {
-        std::cout << "\n-------------------\n" << std::endl;
     }
 
     return;

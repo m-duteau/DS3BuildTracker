@@ -6,6 +6,8 @@ DS3 Build Tracker reads .csv files in order to save data for weapons, armor, sor
 
 Certain .csv files were created by other users; they are credited within the heading of the main.cpp, and any .csv files made by me use data gathered from https://darksouls3.wiki.fextralife.com/Dark+Souls+3+Wiki , https://darksouls.fandom.com/wiki/Category:Dark_Souls_III , and the game itself. Editing of .csv files is NOT recommended as it can cause unintended behavior by the program.
 
+As of the most recent update, the .csv files are now contained within the /assets folder; this path is coded into the main.cpp and allows the program to find them. Be sure that the /assets folder is placed within the same directory that contains all of the .cpp and .h files.
+
 # Motivation
 Before anything else, this is mainly a personal project to gain and show experience with the C++ programming language. However, I've also found it difficult to impossible to find an already established Dark Souls 3 reference application or software that includes an option to save builds; either this feature is non-existent or locked behind a paywall.
 
@@ -22,9 +24,9 @@ Each menu has the option to list all names of elements (weapons, shields, armor,
 
 Weapon/Shield and Armor menus also provide an option for viewing elements by weapon/shield type or armor set
 
-# Roadmap/To-Do
+Rings and magic will also provide acquisition descriptions, allowing this application to also serve as a guide for finding these objects in the game
 
-Implement rings
+# Roadmap/To-Do
 
 Implement build saving
 

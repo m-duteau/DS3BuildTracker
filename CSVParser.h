@@ -90,6 +90,15 @@ struct Armor
     std::string armorSet = "";
 };
 
+struct Ring
+{
+    int ringID = -1;
+    std::string ringName = "";
+    std::string weight = "";
+    std::string ringDesc = "";
+    std::string acquisition = "";
+};
+
 struct Sorcery
 {
     int sorceryID = -1;
@@ -127,13 +136,12 @@ struct Pyromancy
     std::string notes = "";
 };
 
-// shields,rings
-
 std::vector<std::string> splitString(std::string str, char delimiter);
 std::vector<std::string> retrieveFileContents(std::string csvPath);
 std::vector<Weapon> loadWeapons(std::string csvPath);
 std::vector<Shield> loadShields(std::string csvPath);
 std::vector<Armor> loadArmor(std::string csvPath);
+std::vector<Ring> loadRings(std::string csvPath);
 std::vector<Sorcery> loadSorceries(std::string csvPath);
 std::vector<Miracle> loadMiracles(std::string csvPath);
 std::vector<Pyromancy> loadPyromancies(std::string csvPath);
