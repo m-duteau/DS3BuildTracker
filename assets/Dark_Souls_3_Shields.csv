@@ -1,0 +1,65 @@
+,Requirements,,,,,Damage,,Defenses %,,,,,,Scaling (+10/+5),,,,,,,
+Shield,STR,DEX,INT,FTH,Units,Phy,Fire,Phy,Magic,Fire,Light,Dark,Stability,S,I,F,Shield Type,Damage Type,Skill,Upgrade Material,Notes
+Buckler,7,13,,,1.5,67,,49,35,30,11,28,33,E,,,Small Shield,Strike,Parry,Titanite,
+Red and White Shield,10,,,,1.5,69,,52,58,46,36,32,39,E,,,Small Shield,Strike,Parry,Titanite,
+Elkhorn Round Shield,8,,,,1.5,69,,59,63,33,36,25,39,E,,,Small Shield,Strike,Parry,Titanite,
+Target Shield,8,11,,,2,69,,61,36,31,12,29,36,E,,,Small Shield,Strike,Parry,Titanite,
+Iron Round Shield,5,,,,2,71,,67,44,38,19,36,47,E,,,Small Shield,Strike,Parry,Titanite,
+Warrior's Round Shield,10,,,,1.5,74,,62,68,45,46,36,41,E,,,Small Shield,Strike,Weapon Skill,Titanite,
+Hawkwood's Shield,5,,,,2,72,,56,35,58,45,55,41,E,,,Small Shield,Strike,Parry,Titanite,
+Caduceus Round Shield,10,,,,1.5,69,,52,63,46,36,25,39,E,,,Small Shield,Strike,Parry,Titanite,
+Crimson Parma,7,,,,1.5,69,,52,63,40,36,39,39,E,,,Small Shield,Strike,Parry,Titanite,
+Leather Shield,7,,,,1.5,69,,52,38,40,42,32,39,E,,,Small Shield,Strike,Parry,Titanite,
+Sacred Bloom Shield,10,,,,1.5,82,,54,81,49,44,47,38,D,,,Small Shield,Strike,Spell Parry,Twinkling Titanite,
+Small Leather Shield,7,,,,2,70,,42,42,50,38,35,35,E,,,Small Shield,Strike,Parry,Titanite,
+Llewellyn Shield,12,,,,3,76,,68,69,63,44,61,45,D,,,Small Shield,Strike,Parry,Titanite,
+Golden Falcon Shield,10,,,,2.5,74,,59,45,39,20,37,48,D,,,Small Shield,Strike,Parry,Titanite,
+Eastern Iron Shield,8,,,,3,81,,85,40,41,22,39,48,D,,,Small Shield,Strike,Weapon Skill,Titanite,
+Plank Shield,8,,,,1,53,,41,24,27,23,25,34,E,,,Small Shield,Strike,Shield Bash,Titanite,
+Ghru Rotshield,5,,,,1.5,78,,62,43,39,34,37,44,E,,,Small Shield,Strike,Shield Bash,Titanite,34 auxilliary poison damage
+Dragonhead Shield,12,,11,12,4.5,116,12,70,65,90,35,55,40,D,E,E,Small Shield,Strike,Dragon Breath,Titanite Scale,The Ringed City DLC
+Wargod Wooden Shield,12,,,,4,88,,84,47,69,64,67,57,D,,,Standard Shield,Strike,Weapon Skill,Titanite,
+Spider Shield,10,,,,3.5,88,,80,52,47,29,46,56,D,,,Standard Shield,Strike,Weapon Skill,Titanite,
+Sunset Shield,12,,,,5,82,,100,60,55,55,26,49,D,,,Standard Shield,Strike,Parry,Titanite,
+Shield of Want,18,,,,5.5,104,,100,61,63,43,61,58,D,,,Standard Shield,Strike,Weapon Skill,Titanite Scale,Increases souls gained by 20%
+Silver Eagle Kite Shield,11,,,,5,88,,100,44,45,33,43,45,D,,,Standard Shield,Strike,Weapon Skill,Titanite,
+Kite Shield,12,,,,4.5,80,,100,50,52,33,50,47,D,,,Standard Shield,Strike,Parry,Titanite,
+Pierce Shield,10,,,,3.5,87,,93,62,50,31,48,53,D,,,Standard Shield,Thrust,Shield Bash,Titanite,
+Stone Parma,17,,,,7,94,,100,58,52,53,57,57,D,,,Standard Shield,Strike,Weapon Skill,Titanite,
+Spiked Shield,12,12,,,3.5,86,,91,49,51,32,56,48,D,,,Standard Shield,Strike,Shield Strike,Titanite,30 auxilliary bleed damage
+Crest Shield,14,,,,5,95,,100,67,56,43,86,49,D,,,Standard Shield,Strike,Parry,Twinkling Titanite,
+Grass Crest Shield,10,,,,4.5,92,,89,43,38,33,36,50,D,,,Standard Shield,Strike,Parry,Twinkling Titanite,Increases stamina recover by 4 points per second
+Dragon Crest Shield,14,,,,5,95,,100,67,89,43,53,49,D,,,Standard Shield,Strike,Parry,Twinkling Titanite,
+East-West Shield,8,,,,2,76,,55,70,53,56,46,45,D,,,Standard Shield,Strike,Parry,Titanite,
+Blue Wooden Shield,8,,,,2.5,77,,56,70,54,56,39,50,D,,,Standard Shield,Strike,Parry,Titanite,
+Knight Shield,13,,,,4.5,70,,100,51,46,34,44,48,D,,,Standard Shield,Strike,Parry,Titanite,
+Pontiff Knight Shield,8,12,,,3.5,63,,73,79,69,69,72,42,D,,,Standard Shield,Strike,Weapon Skill,Twinkling Titanite,
+Silver Knight Shield,16,,,,6.5,98,,100,60,54,48,52,55,D,,,Standard Shield,Strike,Parry,Twinkling Titanite,
+Porcine Shield,8,,,,4.5,85,,74,43,38,27,36,48,D,,,Standard Shield,Strike,Shield Bash,Titanite,Piggy!
+Spirit Tree Crest Shield,14,,,,5,95,,100,67,56,83,53,49,D,,,Standard Shield,Strike,Parry,Twinkling Titanite,
+Black Knight Shield,18,,,,7.5,113,,100,65,85,52,69,60,D,,,Standard Shield,Strike,Weapon Skill,Twinkling Titanite,
+Golden Wing Crest Shield,14,,,,5.5,102,,100,75,50,57,47,50,D,,,Standard Shield,Strike,Spell Parry,Twinkling Titanite,
+Large Leather Shield,8,,,,3.5,78,,85,54,56,58,48,51,D,,,Standard Shield,Strike,Parry,Titanite,
+Wooden Shield,8,,,,2.5,78,,67,66,48,44,39,53,D,,,Standard Shield,Strike,Parry,Titanite,
+Lothric Knight Shield,18,,,,6,83,,100,59,53,87,51,54,D,,,Standard Shield,Strike,Parry,Titanite,
+Sunlight Shield,12,,,,5.5,82,,100,54,49,44,47,49,D,,,Standard Shield,Strike,Parry,Titanite,
+Carthus Shield,8,,,,2.5,56,,61,45,21,56,52,45,D,,,Standard Shield,Strike,Parry,Titanite,
+Round Shield,8,,,,3.5,79,,86,68,50,45,41,51,D,,,Standard Shield,Strike,Parry,Titanite,
+Follower Shield,9,,,,3.5,80,,80,50,35,50,65,55,D,,,Standard Shield,Strike,Weapon Skill,Titanite,Ashes of Ariandel DLC
+Ethereal Oak Shield,12,,,,5,103,,100,65,35,70,60,50,D,,,Standard Shield,Strike,Weapon Skill,Twinkling Titanite,Ashes of Ariandel DLC^Recovers 2 HP per second
+Black Iron Greatshield,32,,,,14.5,112,,100,69,83,53,69,64,D,,,Greatshield,Strike,Shield Bash,Titanite,
+Bonewheel Shield,30,10,,,15,111,,100,63,59,54,63,59,D,,,Greatshield,Strike,Wheel of Fate,Titanite,
+Moaning Shield,50,,,,21.5,136,,100,81,69,76,67,77,D,,,Greatshield,Strike,Moan,Twinkling Titanite,
+Twin Dragon Shield,16,,,,7,106,,84,59,63,66,59,63,D,,,Greatshield,Strike,Shield Bash,Titanite,
+Stone Greatshield,38,,,,18,115,,100,75,71,71,75,67,D,,,Greatshield,Strike,Shield Bash,Titanite,
+Lothric Knight Greatshield,36,,,,15,111,,100,83,66,54,63,64,D,,,Greatshield,Strike,Shield Bash,Titanite,
+Curse Ward Greatshield,34,,,,17,125,,100,75,69,63,75,66,D,,,Greatshield,Strike,Weapon Skill,Titanite Scale,
+Yhorm's Greatshield,40,,,,20.5,132,,100,74,76,63,74,73,D,,,Greatshield,Strike,Shield Bash,Titanite Scale,Increases Poise by 15
+Greatshield of Glory,40,,,,18.5,134,,100,70,65,52,63,80,D,,,Greatshield,Strike,Shield Bash,Twinkling Titanite,Decreases stamina regeneration by 20
+Dragonslayer Greatshield,38,,,,26,134,,100,71,70,95,77,74,D,,,Greatshield,Strike,Shield Bash,Titanite Scale,Unique Shield Bash animation that negates most attacks
+Havel's Greatshield,40,,,,28,143,,100,83,83,82,83,75,D,,,Greatshield,Strike,Stone Flesh,Twinkling Titanite,
+Ancient Dragon Greatshield,16,,,,6.5,87,,77,45,43,46,45,54,D,,,Greatshield,Strike,Weapon Skill,Twinkling Titanite,Recovers 2 HP per second
+Wolf Knight's Greatshield,30,,,,11,124,,100,68,65,52,68,67,D,,,Greatshield,Strike,Weapon Skill,Twinkling Titanite,Applies 50 to all status effect resistances
+Cathedral Knight Greatshield,32,,,,15.5,112,,100,63,60,54,83,67,D,,,Greatshield,Strike,Shield Bash,Titanite,
+Dragonhead Greatshield,35,,,15,18,145,,100,55,90,30,55,60,D,,E,Greatshield,Strike,Dragon Roar,Titanite Scale,The Ringed City DLC
+Giant Door Shield,45,,,,21.5,107,,100,75,45,80,75,60,C,,,Greatshield,Strike,Lockout,Titanite,The Ringed City DLC
