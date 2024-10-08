@@ -290,7 +290,7 @@ std::vector<Shield> loadShields(std::string csvPath)
     return shieldList;
 }
 
-//same as above but for armor
+// same as above but for armor
 std::vector<Armor> loadArmor(std::string csvPath)
 {
     std::vector<Armor> armorList;
@@ -298,7 +298,7 @@ std::vector<Armor> loadArmor(std::string csvPath)
 
     if (fileLines.size() != 0)
     {
-        for (int i = 4; i < fileLines.size(); ++i)
+        for (int i = 5; i < fileLines.size(); ++i)
         {
             Armor armor;
             std::string currLine = fileLines.at(i);
@@ -309,7 +309,7 @@ std::vector<Armor> loadArmor(std::string csvPath)
                 return armorList;
             }
 
-            armor.armorID = i - 3;
+            armor.armorID = i - 4;
             armor.armorName = brokenStrings.at(0);
             armor.weight = brokenStrings.at(1);
             armor.physDef = brokenStrings.at(2);
@@ -342,7 +342,46 @@ std::vector<Armor> loadArmor(std::string csvPath)
     return armorList;
 }
 
-//same as above but for sorceries
+// same as above but for rings
+std::vector<Ring> loadRings(std::string csvPath)
+{
+    std::vector<Ring> ringList;
+    std::vector<std::string> fileLines = retrieveFileContents(csvPath);
+
+    if (fileLines.size() != 0)
+    {
+        for (int i = 1; i < fileLines.size(); ++i)
+        {
+            Ring ring;
+            std::string currLine = fileLines.at(i);
+            std::vector<std::string> brokenStrings = splitString(currLine, ',');
+            if (brokenStrings.size() == 0)
+            {
+                std::cout << "Incorrect file format." << std::endl;
+                return ringList;
+            }
+
+            ring.ringID = i;
+            ring.ringName = brokenStrings.at(0);
+            ring.weight = brokenStrings.at(1);
+            ring.ringDesc = brokenStrings.at(2);
+            ring.acquisition = brokenStrings.at(3);
+
+            brokenStrings.clear();
+            ringList.push_back(ring);
+        }
+        std::cout << "Ring data has been stored successfully.\n\n" << std::endl;
+    }
+    else
+    {
+        std::cout << "Unable to open " << csvPath << ".\n" << std::endl;
+    }
+    fileLines.clear();
+
+    return ringList;
+}
+
+// same as above but for sorceries
 std::vector<Sorcery> loadSorceries(std::string csvPath)
 {
     std::vector<Sorcery> sorceryList;

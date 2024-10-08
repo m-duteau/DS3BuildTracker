@@ -5,7 +5,7 @@
 #include "Displays.h"
 
 void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList);
-void armorMenu(std::vector<Armor> armorList);
+void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList);
 void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleList, std::vector<Pyromancy> pyromancyList);
 
 #endif

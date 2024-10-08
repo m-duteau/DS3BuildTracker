@@ -88,7 +88,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
         {
             std::cout << "\nEnter the weapon ID to be displayed: ";
             std::cin >> input;
-            std::cout << std::endl;
+            std::cout << "\n\n";
             for (int i = 0; i < weaponList.size(); ++i)
             {
                 if (weaponList[i].weaponID == stoi(input))
@@ -122,6 +122,14 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             for (int i = 0; i < shieldList.size(); ++i)
             {
                 displayShield(shieldList.at(i));
+                if (i < 62)
+                {
+                    std::cout << "\n--------------------\n" << std::endl;
+                }
+                else
+                {
+                    std::cout << "\n" << std::endl;
+                }
             }
             std::cout << "----------------------------------------------------\n" << std::endl;
         }
@@ -155,7 +163,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             }
             else
             {
-                std::cout << "nope.\n" << std::endl;
+                std::cout << "nuh uh.\n" << std::endl;
             }
         }
 
@@ -163,7 +171,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
         {
             std::cout << "\nEnter the shield ID to be displayed: ";
             std::cin >> input;
-            std::cout << std::endl;
+            std::cout << "\n\n";
             for (int i = 0; i < shieldList.size(); ++i)
             {
                 if (shieldList[i].shieldID == stoi(input))
@@ -192,52 +200,52 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
 /*
 * Displays the menu that contains commands for displaying different armor data
 */
-void armorMenu(std::vector<Armor> armorList)
+void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
 {
     std::string input;
     int choice = 0;
 
     while (choice != 99)
     {
-        std::cout << "********************************************" << std::endl;
-        std::cout << "*                 * Armor *                *" << std::endl;
-        std::cout << "*                                          *" << std::endl;
-        std::cout << "*  1. Display All Armor                    *" << std::endl;
-        std::cout << "*  2. Display All Armor and Attributes     *" << std::endl;
-        std::cout << "*  3. Display Armor Sets                   *" << std::endl;
-        std::cout << "*  4. Print Individual Armor Information   *" << std::endl;
-        std::cout << "*  99. Return to Main Menu                 *" << std::endl;
-        std::cout << "********************************************" << std::endl;
+        std::cout << "************************************************" << std::endl;
+        std::cout << "*               * Armor & Rings *              *" << std::endl;
+        std::cout << "*                                              *" << std::endl;
+        std::cout << "*  1. Display All Armor                        *" << std::endl;
+        std::cout << "*  2. Display All Armor and Attributes         *" << std::endl;
+        std::cout << "*  3. Display Armor Sets                       *" << std::endl;
+        std::cout << "*  4. Print Individual Armor Information       *" << std::endl;
+        std::cout << "*  5. Display All Rings                        *" << std::endl;
+        std::cout << "*  6. Display All Rings and Attributes         *" << std::endl;
+        std::cout << "*  7. Display Ring Attributes and Acquisition  *" << std::endl;
+        std::cout << "*  8. Print Individual Ring Information        *" << std::endl;
+        std::cout << "*  99. Return to Main Menu                     *" << std::endl;
+        std::cout << "************************************************" << std::endl;
         std::cout << "Enter choice: ";
         std::cin >> choice;
         std::cout << std::endl;
 
         if (choice == 1)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < armorList.size(); ++i)
             {
                 std::cout << armorList[i].armorID << ": " << armorList[i].armorName << std::endl;
             }
-            std::cout << "----------------------------------------------------\n" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
 
         else if (choice == 2)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < armorList.size(); ++i)
             {
                 displayArmor(armorList.at(i));
-                if (i < 324)
+                if (i < armorList.size() - 1)
                 {
-                    std::cout << "\n--------------------" << std::endl;
-                }
-                else
-                {
-                    std::cout << "\n" << std::endl;
+                    std::cout << "\n--------------------\n" << std::endl;
                 }
             }
-            std::cout << "----------------------------------------------------\n" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
 
         else if (choice == 3)
@@ -285,7 +293,7 @@ void armorMenu(std::vector<Armor> armorList)
             }
             else
             {
-                std::cout << "nope.\n" << std::endl;
+                std::cout << "probably not.\n" << std::endl;
             }
         }
 
@@ -293,7 +301,7 @@ void armorMenu(std::vector<Armor> armorList)
         {
             std::cout << "\nEnter the armor ID to be displayed: ";
             std::cin >> input;
-            std::cout << std::endl;
+            std::cout << "\n\n";
             for (int i = 0; i < armorList.size(); ++i)
             {
                 if (armorList[i].armorID == stoi(input))
@@ -301,11 +309,71 @@ void armorMenu(std::vector<Armor> armorList)
                     displayArmor(armorList.at(i));
                     std::cout << "\n";
                 }
-                else if (stoi(input) > 325 || stoi(input) < 1)
+                else if (stoi(input) > armorList.size() || stoi(input) < 1)
                 {
                     if (i == armorList.size() - 1)
                     {
                         std::cout << "Armor ID not found.\n" << std::endl;
+                    }
+                }
+            }
+        }
+
+        else if (choice == 5)
+        {
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
+            for (int i = 0; i < ringList.size(); ++i)
+            {
+                std::cout << ringList[i].ringID << ": " << ringList[i].ringName << std::endl;
+            }
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
+        }
+
+        else if (choice == 6)
+        {
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
+            for (int i = 0; i < ringList.size(); ++i)
+            {
+                displayRing(ringList.at(i));
+                if (i < ringList.size() - 1)
+                {
+                    std::cout << "\n--------------------\n" << std::endl;
+                }
+            }
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
+        }
+
+        else if (choice == 7)
+        {
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
+            for (int i = 0; i < ringList.size(); ++i)
+            {
+                displayRingWithAcq(ringList.at(i));
+                if (i < ringList.size() - 1)
+                {
+                    std::cout << "\n--------------------\n" << std::endl;
+                }
+            }
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
+        }
+
+        else if (choice == 8)
+        {
+            std::cout << "\nEnter the ring ID to be displayed: ";
+            std::cin >> input;
+            std::cout << "\n\n";
+            for (int i = 0; i < ringList.size(); ++i)
+            {
+                if (ringList[i].ringID == stoi(input))
+                {
+                    displayRingWithAcq(ringList.at(i));
+                    std::cout << "\n";
+                }
+                else if (stoi(input) > ringList.size() || stoi(input) < 1)
+                {
+                    if (i == ringList.size() - 1)
+                    {
+                        std::cout << "Ring ID not found.\n" << std::endl;
                     }
                 }
             }
@@ -349,20 +417,24 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
 
         if (choice == 1)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < sorceryList.size(); ++i)
             {
                 std::cout << sorceryList[i].sorceryID << ": " << sorceryList[i].sorceryName << std::endl;
             }
-            std::cout << "----------------------------------------------------\n" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
 
         else if (choice == 2)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < sorceryList.size(); ++i)
             {
                 displaySorcery(sorceryList.at(i));
+                if (i < sorceryList.size() - 1)
+                {
+                    std::cout << "\n--------------------\n" << std::endl;
+                }
             }
             std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
@@ -371,7 +443,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         {
             std::cout << "\nEnter the Sorcery ID to be displayed: ";
             std::cin >> input;
-            std::cout << "\n";
+            std::cout << "\n\n";
             for (int i = 0; i < sorceryList.size(); ++i)
             {
                 if (sorceryList[i].sorceryID == stoi(input))
@@ -379,7 +451,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
                     displaySorcery(sorceryList.at(i));
                     std::cout << "\n";
                 }
-                else if (stoi(input) > 38 || stoi(input) < 1)
+                else if (stoi(input) > sorceryList.size() || stoi(input) < 1)
                 {
                     if (i == sorceryList.size() - 1)
                     {
@@ -392,20 +464,24 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
 
         else if (choice == 4)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < miracleList.size(); ++i)
             {
                 std::cout << miracleList[i].miracleID << ": " << miracleList[i].miracleName << std::endl;
             }
-            std::cout << "----------------------------------------------------\n" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
 
         else if (choice == 5)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < miracleList.size(); ++i)
             {
                 displayMiracle(miracleList.at(i));
+                if (i < miracleList.size() - 1)
+                {
+                    std::cout << "\n--------------------\n" << std::endl;
+                }
             }
             std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
@@ -414,7 +490,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         {
             std::cout << "\nEnter the Miracle ID to be displayed: ";
             std::cin >> input;
-            std::cout << "\n";
+            std::cout << "\n\n";
             for (int i = 0; i < miracleList.size(); ++i)
             {
                 if (miracleList[i].miracleID == stoi(input))
@@ -435,20 +511,24 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
 
         else if (choice == 7)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < pyromancyList.size(); ++i)
             {
                 std::cout << pyromancyList[i].pyromancyID << ": " << pyromancyList[i].pyromancyName << std::endl;
             }
-            std::cout << "----------------------------------------------------\n" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
 
         else if (choice == 8)
         {
-            std::cout << "\n----------------------------------------------------" << std::endl;
+            std::cout << "\n----------------------------------------------------\n" << std::endl;
             for (int i = 0; i < pyromancyList.size(); ++i)
             {
                 displayPyromancy(pyromancyList.at(i));
+                if (i < pyromancyList.size() - 1)
+                {
+                    std::cout << "\n--------------------\n" << std::endl;
+                }
             }
             std::cout << "\n----------------------------------------------------\n" << std::endl;
         }
@@ -457,7 +537,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         {
             std::cout << "\nEnter the Pyromancy ID to be displayed: ";
             std::cin >> input;
-            std::cout << "\n";
+            std::cout << "\n\n";
             for (int i = 0; i < pyromancyList.size(); ++i)
             {
                 if (pyromancyList[i].pyromancyID == stoi(input))
